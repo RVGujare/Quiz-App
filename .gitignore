@@ -1,0 +1,7 @@
+
+quiz_backend/node_modules
+quiz_frontend/node_modules
+
+quiz_frontend/dist
+quiz_frontend/.angular
+.env

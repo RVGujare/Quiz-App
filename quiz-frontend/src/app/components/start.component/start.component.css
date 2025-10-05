@@ -1,0 +1,27 @@
+.start-container {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center;     
+  height: 100vh;
+  text-align: center;
+}
+
+.start-container h1 {
+  margin-bottom: 20px; 
+  font-size: 50px;
+}
+
+.start-container button {
+  padding: 12px 25px;
+  font-size: 1.5em;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background-color: #9708e9;
+  color: white;
+}
+
+.start-container button:hover {
+  background-color: #550484;
+}

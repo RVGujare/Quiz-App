@@ -1,0 +1,26 @@
+<div class="quiz-container">
+  <div class="quiz-box" *ngIf="questions.length > 0; else loading">
+    <h1>Question {{ currentIndex + 1 }} of {{ questions.length }}</h1>
+    <p>{{ questions[currentIndex].text }}</p>
+
+    <div class="options">
+      <button
+        *ngFor="let option of questions[currentIndex].options; let i = index"
+        (click)="selectOption(questions[currentIndex].id, i + 1)"
+        [class.selected]="answers[questions[currentIndex].id] === (i + 1)"
+      >
+        {{ option }}
+      </button>
+    </div>
+
+    <div class="navigation">
+      <button (click)="prevQuestion()" [disabled]="currentIndex === 0">Previous</button>
+      <button (click)="nextQuestion()" *ngIf="currentIndex < questions.length - 1">Next</button>
+      <button (click)="submitQuiz()" *ngIf="currentIndex === questions.length - 1">Submit</button>
+    </div>
+  </div>
+
+  <ng-template #loading>
+    <p>Loading questions...</p>
+  </ng-template>
+</div>
